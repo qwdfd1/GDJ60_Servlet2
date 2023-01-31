@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <!-- 
+  배포 서술자 : 톰캣이 읽을 수 있도록 서술함
+  -->
+  
+  <!-- 
+  Homecontroller home = new HomeController();
+  servlet-name : 참조변수명
+  servlet-class : 클래스 위치 
+  -->
+  <servlet>
+  	<servlet-name>home</servlet-name>
+  	<servlet-class>com.onion.home.HomeController</servlet-class>
+  </servlet>
+	
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<servlet-class>com.onion.home.product.ProductController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>member</servlet-name>
+		<servlet-class>com.onion.home.member.MemberController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>member</servlet-name>
+		<url-pattern>/member/memberList.do</url-pattern>
+	</servlet-mapping>
+</web-app>
