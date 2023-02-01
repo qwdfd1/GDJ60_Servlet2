@@ -25,6 +25,15 @@ public class ProductService {
 	public void setProductDAO(ProductDAO productDAO) {
 		this.productDAO = productDAO;
 	}
+	
+	public ProductDTO getProductDetail(ProductDTO productDTO) throws Exception {
+		return productDAO.getProductDetail(productDTO);
+		
+	}
+	
+	public List<ProductDTO> getProductList() throws Exception {
+		return productDAO.getProductList();
+	}
 
 	public int setAddProduct(ProductDTO productDTO, List<ProductOptionDTO> productOptionDTOs) throws Exception {
 		//product , option

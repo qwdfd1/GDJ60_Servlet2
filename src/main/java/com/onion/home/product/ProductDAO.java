@@ -11,6 +11,8 @@ import com.onion.home.util.DBConn;
 
 public class ProductDAO {
 	
+
+	
 	public Long getProductNum() throws Exception{
 		
 		Connection conn = DBConn.getConn();
@@ -78,6 +80,38 @@ public class ProductDAO {
 		DBConn.disConnection(rs, ps, conn);
 		
 		return productDTOs;
+	}
+	
+	public ProductDTO getProductDetail(ProductDTO productDTO) throws Exception {
+		
+		Connection conn = DBConn.getConn();
+		
+		String sql ="SELECT * FROM PRODUCT WHERE PRODUCTNUM = ?";
+		
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setLong(1, productDTO.getProductNum());
+		
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			productDTO = new ProductDTO();
+			productDTO.setProductNum(rs.getLong("PRODUCTNUM"));
+			productDTO.setProductName(rs.getString("PRODUCTNAME"));
+			productDTO.setProductJumsu(rs.getDouble("PRODUCTJUMSU"));
+			productDTO.setProductDetail(rs.getString("PRODUCTDETAIL"));
+		}
+		else {
+			productDTO = null;
+		}
+	
+		
+		DBConn.disConnection(rs, ps, conn);
+		
+		return productDTO;
+		
+		
 	}
 	
 	public int setAddProduct (ProductDTO productDTO) throws Exception  {

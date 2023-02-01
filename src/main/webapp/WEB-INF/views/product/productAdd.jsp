@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Home Page</h1>
-	<a href="/product.do?name=Balmain&detail=explain">productList</a>
-	<a href="/member/memberList.do">memberList</a>
-	
-	
+	<h1>Product Add Page</h1>
 </body>
 </html>
