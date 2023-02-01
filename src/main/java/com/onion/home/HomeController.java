@@ -34,6 +34,7 @@ public class HomeController extends HttpServlet {
 //		out.println("<h1>SEK JOO PAGE </h1>");
 //		out.println("<h2>Header2</h2>");
 //		
+		
 //		out.close();
 		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/home.jsp");
